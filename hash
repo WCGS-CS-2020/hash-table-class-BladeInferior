@@ -1,0 +1,45 @@
+using System;
+using System.Text;
+using DataStructures;
+
+namespace HashTable
+{
+    class HashTable  //hash table implementation for string values
+    {
+        private LinkedList<string>[] values;
+        private int count;
+        private int Size;
+
+        public HashTable(int size)
+        {
+            count = 0;
+            Size = size;
+            values = new LinkedList<string>[size];
+        }
+
+        public void Add(string item)
+        {
+            int index = Hash(item);
+            if (values[index] == null)
+            {
+                values[index] = new LinkedList<string>();
+                values[index].Add(item);
+            }
+            else
+            {
+                values[index].Add(item);
+            }
+            count++;
+        }
+
+        public void Remove(string item)
+        {
+            int index = Hash(item);
+            values[index].Remove(item);
+            count--;
+        }
+
+    
+
+    }
+}
