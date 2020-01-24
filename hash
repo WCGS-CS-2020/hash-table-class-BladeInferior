@@ -4,9 +4,9 @@ using DataStructures;
 
 namespace HashTable
 {
-    class HashTable  //hash table implementation for string values
+    class HashTable  // hash class
     {
-        private LinkedList<string>[] values;
+        
         private int count;
         private int Size;
 
@@ -14,28 +14,18 @@ namespace HashTable
         {
             count = 0;
             Size = size;
-            values = new LinkedList<string>[size];
+            
         }
 
         public void Add(string item)
         {
-            int index = HashTable(item);
-            if (values[index] == null)
-            {
-                values[index] = new LinkedList<string>();
-                values[index].Add(item);
-            }
-            else
-            {
-                values[index].Add(item);
-            }
+            HashTable.Add(item);
             count++;
         }
 
         public void Remove(string item)
         {
-            int index = HashTable(item);
-            values[index].Remove(item);
+            HashTable.Remove(item);
             count--;
         }
 
