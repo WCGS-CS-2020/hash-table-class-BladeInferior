@@ -19,7 +19,7 @@ namespace HashTable
 
         public void Add(string item)
         {
-            int index = Hash(item);
+            int index = HashTable(item);
             if (values[index] == null)
             {
                 values[index] = new LinkedList<string>();
@@ -34,7 +34,7 @@ namespace HashTable
 
         public void Remove(string item)
         {
-            int index = Hash(item);
+            int index = HashTable(item);
             values[index].Remove(item);
             count--;
         }
